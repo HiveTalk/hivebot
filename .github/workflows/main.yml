@@ -29,10 +29,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git add -f meetinfo.log
         git commit -m "Update meetinfo.log"
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
