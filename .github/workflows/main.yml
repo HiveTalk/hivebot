@@ -1,0 +1,38 @@
+name: Poll HiveTalk Meetings
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # Runs every 5 minutes
+
+jobs:
+  poll-and-post:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests python-dotenv nostr-sdk
+
+    - name: Run poll_meetinfo script
+      env:
+        NOSTR_PRIVATE_KEY_HEX: ${{ secrets.NOSTR_PRIVATE_KEY_HEX }}  # Make sure to add this secret in your GitHub repo settings
+      run: python poll_meetinfo.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add meetinfo.log
+        git commit -m "Update meetinfo.log"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
