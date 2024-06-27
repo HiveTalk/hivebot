@@ -48,9 +48,11 @@ async def main():
             for meeting in data["meetings"]:
                 room_id = meeting["roomId"]
                 peers = meeting["peers"]
-                current_time = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S %Z')
-                message = f"As of {current_time} UTC, there are {peers} bee(s) now chatting in {room_id} on #HiveTalk. Join them now: https://hivetalk.org/join/{room_id}"
+                current_time = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M %Z')
+                message = f"There are {peers} bee(s) now chatting in {room_id} on #HiveTalk, as of {current_time}. Join them now: https://hivetalk.org/join/{room_id}"
                 
+                print(message)
+
                 # Check if the roomId has been announced in the last hour
                 if not was_announced_recently(room_id):
                     # Log the message
