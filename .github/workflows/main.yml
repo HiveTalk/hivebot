@@ -2,7 +2,7 @@ name: Poll HiveTalk Meetings
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # Runs every 5 minutes
+    - cron: "*/5 * * * *"  # Runs every 5 minutes
   workflow_dispatch:  # Allows manual triggering
 
 
@@ -34,7 +34,11 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add -f meetinfo.log
-        git commit -m "Update meetinfo.log"
-        git push https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}.git
+        if ! git diff-index --quiet HEAD; then
+          git commit -m "Update meetinfo.log"
+          git push https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}.git
+        else
+          echo "No changes to commit"
+        fi
       env:
         PAT: ${{ secrets.PAT }}  # Use PAT for authentication
