@@ -3,6 +3,8 @@ name: Poll HiveTalk Meetings
 on:
   schedule:
     - cron: "*/30 * * * *"  # Runs every 5 minutes
+  workflow_dispatch:  # Allows manual triggering
+
 
 jobs:
   poll-and-post:
