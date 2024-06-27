@@ -33,4 +33,6 @@ jobs:
         git config user.email github-actions@github.com
         git add -f meetinfo.log
         git commit -m "Update meetinfo.log"
-        git push
+        git push https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}.git
+      env:
+        PAT: ${{ secrets.PAT }}  # Use PAT for authentication
