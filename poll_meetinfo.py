@@ -25,18 +25,10 @@ signer = NostrSigner.keys(keys)
 # List of Nostr relay URLs
 NOSTR_RELAY_URLS = [
     'wss://testnet.plebnet.dev/nostrrelay/1',
-    "wss://adre.su/",
-    "wss://mnl.v0l.io/",
-    "wss://nostr-1.nbo.angani.co/",
-    "wss://nostr.coinfundit.com/",
-    "wss://nostr.olwe.link/",
-    "wss://r.kojira.io/",
-    "wss://relay.minds.com/nostr/v1/ws",
     "wss://relay.momostr.pink/",
     "wss://relay.mostr.pub/",
     "wss://relay.nostr.band/",
     "wss://relay.nostriches.org/",
-    "wss://relay.orangepill.dev/",
     "wss://relay.urbanzap.space/",
     "wss://relay.primal.net",
     "wss://relay.nostr.bg/",
