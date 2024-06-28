@@ -29,6 +29,8 @@ NOSTR_RELAY_URLS = [
     "wss://nos.lol/",
     "wss://relay.damus.io/",
     "wss://relay.nostr.band/",
+    "wss://nostr.wine/",
+    "wss://relay.minds.com/nostr/v1/ws",
     "wss://relay.nostriches.org/",
     "wss://relay.momostr.pink/",
     "wss://relay.mostr.pub/",
