@@ -30,16 +30,14 @@ NOSTR_RELAY_URLS = [
     "wss://relay.damus.io/",
     "wss://relay.nostr.band/",
     "wss://nostr.mutinywallet.com/",
+    "wss://nostr-pub.wellorder.net/",
     "wss://nostr.bitcoiner.social/",
     "wss://relay.momostr.pink/",
     "wss://relay.mostr.pub/",
     "wss://relay.urbanzap.space/",
     "wss://relay.nostr.bg/",
-    "wss://nostr-pub.wellorder.net/",
-    "wss://nostrua.com/",
     "wss://nostr.fbxl.net/",
     "wss://nostr.mom/",
-    "wss://nostr.swiss-enigma.ch/",
     "wss://offchain.pub/",
     "wss://relay.mostr.pub/"
 ]
