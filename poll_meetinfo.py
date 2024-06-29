@@ -88,7 +88,7 @@ def was_announced_recently(room_id):
             if room_id in line:
                 log_time_str = line.split(' - ')[0]
                 log_time = datetime.strptime(log_time_str, '%Y-%m-%d %H:%M:%S,%f')
-                if now - log_time < timedelta(hours=0.5):
+                if now - log_time < timedelta(hours=0.25):
                     return True
     return False
 
