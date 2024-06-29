@@ -28,7 +28,7 @@ NOSTR_RELAY_URLS = [
     "wss://relay.primal.net",
     "wss://nos.lol/",
     "wss://relay.damus.io/",
-    "wss://relay.nostr.band/",
+#    "wss://relay.nostr.band/",
 #    "wss://nostr.mutinywallet.com/",
 #    "wss://nostr-pub.wellorder.net/",
 #    "wss://nostr.bitcoiner.social/",
