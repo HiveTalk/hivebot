@@ -25,6 +25,7 @@ signer = NostrSigner.keys(keys)
 # List of Nostr relay URLs
 NOSTR_RELAY_URLS = [
     'wss://testnet.plebnet.dev/nostrrelay/1',
+    'wss://hivetalk.nostr1.com'
 ]
 
 async def main():
