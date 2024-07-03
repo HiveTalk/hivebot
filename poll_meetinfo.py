@@ -24,21 +24,7 @@ signer = NostrSigner.keys(keys)
 
 # List of Nostr relay URLs
 NOSTR_RELAY_URLS = [
-    "wss://testnet.plebnet.dev/nostrrelay/1",
-#    "wss://relay.primal.net",
-#    "wss://nos.lol/",
-#    "wss://relay.damus.io/",
-#    "wss://relay.nostr.band/",
-#    "wss://nostr.mutinywallet.com/",
-#    "wss://nostr-pub.wellorder.net/",
-#    "wss://nostr.bitcoiner.social/",
-    "wss://relay.momostr.pink/",
-#    "wss://relay.urbanzap.space/",
-#    "wss://relay.nostr.bg/",
-#    "wss://nostr.fbxl.net/",
-#    "wss://nostr.mom/",
-#    "wss://offchain.pub/",
-    "wss://relay.mostr.pub/"
+    'wss://testnet.plebnet.dev/nostrrelay/1',
 ]
 
 async def main():
