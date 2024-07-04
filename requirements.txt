@@ -2,4 +2,4 @@ websockets==11.0.2
 requests==2.32.2
 python-dotenv==1.0.1
 nostr-sdk
-telethon==1.36.0
+telethon==1.36.0aiocron
