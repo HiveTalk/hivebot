@@ -1,14 +1,13 @@
 from telethon import TelegramClient, events
 import os
 import logging
-from dotenv import load_dotenv
 import requests
 import aiocron
 from fetchdata import get_meetinfo
+#from dotenv import load_dotenv
 # import yaml
 # import json
-
-load_dotenv()
+#load_dotenv()
 
 base_url = "https://hivetalk.org/api/v1"
 
