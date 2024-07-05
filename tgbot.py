@@ -27,7 +27,6 @@ client.parse_mode = 'html'
 
 bot_commands = ["<b>/active</b> - List active meetings\n",
                 "<b>/meeting</b> - Create a new meeting\n",
-                # "<b>/list</b> - List participants info, e.g. /list room_name\n",
                 "<b>/help</b> - Show this help message\n"]
 #                "<b>/token</b> - Create a custom join URL\n",
 #                "<b>/join</b> - Join a meeting with custom settings\n",
