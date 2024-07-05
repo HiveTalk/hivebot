@@ -85,7 +85,7 @@ async def list_active_meetings(event):
 
         if len(meetings['meetings']) > 0:
             formatted_message = format_meetings(meetings)
-            await event.reply("Active meetings:\n")
+            # await event.reply("Active meetings:\n")
             await event.reply(formatted_message)
 
         else:
