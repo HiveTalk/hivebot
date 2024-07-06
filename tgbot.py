@@ -47,11 +47,12 @@ async def create_meeting(event):
     meeting_name = event.raw_text.split(' ', 1)[1] if len(event.raw_text.split()) > 1 else ''
     url = base_url + '/meeting'
     headers = {'accept': 'application/json', 'authorization': hive_api_key}
-    data = {'meeting_name': meeting_name}
+    data = {'name': meeting_name}
     logging.info(data)
     response = requests.post(url, headers=headers, data=data)
     if response.status_code == 200:
         meeting_info = response.json()
+        logging.info(meeting_info)
         await event.reply(f"Meeting created: {meeting_info['meeting']}")
     else:
         await event.reply("Failed to create meeting")
