@@ -19,7 +19,7 @@ def was_announced_recently(room_id):
 async def get_meetinfo():
     url = "https://hivetalk.org/api/v1/meetinfo"
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         response.raise_for_status()  # Raise an error for bad responses
         data = response.json()
 
