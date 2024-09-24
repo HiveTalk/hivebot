@@ -23,10 +23,10 @@ keys = Keys.parse(PRIVATE_KEY_HEX)
 signer = NostrSigner.keys(keys)
 
 # List of Nostr relay URLs
-NOSTR_RELAY_URLS = [
-    'wss://testnet.plebnet.dev/nostrrelay/1',
-    'wss://hivetalk.nostr1.com'
-]
+# NOSTR_RELAY_URLS = [
+#     'wss://testnet.plebnet.dev/nostrrelay/1',
+#     'wss://hivetalk.nostr1.com'
+# ]
 
 async def main():
     # Init logger
@@ -36,7 +36,7 @@ async def main():
     client = Client(signer)
 
     # Add relays and connect
-    await client.add_relays(NOSTR_RELAY_URLS)
+    await client.add_relay("wss://hivetalk.nostr1.com")
     await client.connect()
 
     url = "https://hivetalk.org/api/v1/meetinfo"
@@ -50,7 +50,7 @@ async def main():
                 room_id = meeting["roomId"]
                 peers = meeting["peers"]
                 current_time = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M %Z')
-                message = f"There are {peers} bee(s) now chatting in {room_id} on #HiveTalk, as of {current_time}. Join them now: https://hivetalk.org/join/{room_id}"
+                message = f"There are {peers} bee(s) now chatting in {room_id} on #HiveTalk, as of {current_time}. Join them now: https://hivetalk.org/join/{room_id} #grownostr"
                 
                 print(message)
 
