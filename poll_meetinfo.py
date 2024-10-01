@@ -14,9 +14,19 @@ load_dotenv()
 logging.basicConfig(filename='meetinfo.log', level=logging.INFO, format='%(asctime)s - %(message)s')
 
 # Fetch Nostr private key from environment variable
+HIVE_API_KEY = os.getenv('HIVE_API_KEY')
+if not HIVE_API_KEY:
+    raise ValueError("The HIVE_API_KEY environment variable is not set.")
+
 PRIVATE_KEY_HEX = os.getenv('NOSTR_PRIVATE_KEY_HEX')
 if not PRIVATE_KEY_HEX:
     raise ValueError("The NOSTR_PRIVATE_KEY_HEX environment variable is not set.")
+
+
+# Set up headers for authorization
+headers = {
+    'authorization': HIVE_API_KEY
+}
 
 # Initialize Nostr keys and signer
 keys = Keys.parse(PRIVATE_KEY_HEX)
@@ -41,9 +51,11 @@ async def main():
 
     url = "https://hivetalk.org/api/v1/meetinfo"
     try:
-        response = requests.get(url)
+        response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()  # Raise an error for bad responses
         data = response.json()
+#        logging.info("meetinfo data:")
+#        logging.info(data)
 
         if "meetings" in data:
             for meeting in data["meetings"]:
@@ -51,7 +63,6 @@ async def main():
                 peers = meeting["peers"]
                 current_time = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M %Z')
                 message = f"There are {peers} bee(s) now chatting in {room_id} on #HiveTalk, as of {current_time}. Join them now: https://hivetalk.org/join/{room_id} #grownostr"
-                
                 print(message)
 
                 # Check if the roomId has been announced in the last hour
