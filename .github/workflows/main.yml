@@ -27,6 +27,7 @@ jobs:
     - name: Run poll_meetinfo script
       env:
         NOSTR_PRIVATE_KEY_HEX: ${{ secrets.NOSTR_PRIVATE_KEY_HEX }}  # Make sure to add this secret in your GitHub repo settings
+        HIVE_API_KEY: ${{ secrets.HIVE_API_KEY }}
       run: python poll_meetinfo.py
 
     - name: Commit and push changes
