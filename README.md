@@ -1,7 +1,7 @@
 # hivebot
 hivetalk nostr bot - room announcer
 
-- This Bot will poll the HiveTalk API every 15 min do the following: 
+- This Bot will poll the HiveTalk API every 15 min as a github action currently to do the following: 
 - It will post a link to active rooms within the last hour on the nostr social media account as a kind 1 note.
 - It will also append it to the log in this repository. 
 - If the room has been posted in the last hour already it will not repost it so as not to spam the network.
