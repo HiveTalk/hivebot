@@ -10,7 +10,7 @@ This Bot will poll the HiveTalk API every 15 min as a github action currently to
 - Make a SimpleX bot that posts notifications of rooms when created and destroyed.
 - In Simplex Bot, Allow users to poll specific rooms which are public and unlocked to see who is in the room
 
-## TODO -  Nostr:
+## TODO -  Nostr (On Hold)
 - Kind 1 note should be revised and posted as live event, as a push notification, when wss API endpoint is available.
 - Live Events on nostr should be updated when event is over.
   
