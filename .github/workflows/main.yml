@@ -1,10 +1,10 @@
 name: Poll HiveTalk Meetings
 
 # pause this work flow for now to nostr relays
-on:
-  schedule:
-    - cron: "*/15 * * * *"  # Runs every 15 minutes
-  workflow_dispatch:  # Allows manual triggering
+#on:
+#  schedule:
+#    - cron: "*/15 * * * *"  # Runs every 15 minutes
+#  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   poll-and-post:
